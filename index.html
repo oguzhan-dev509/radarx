@@ -9,27 +9,9 @@
     <style>
         .radar-pulse { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); } }
-        
-        .spotlight-box {
-            background: linear-gradient(145deg, #1e293b, #0f172a);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #334155;
-        }
-        .spotlight-effect {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, transparent 50%);
-            animation: moveSpotlight 6s infinite alternate;
-            pointer-events: none;
-        }
-        @keyframes moveSpotlight {
-            from { transform: translate(-10%, -10%); }
-            to { transform: translate(10%, 10%); }
-        }
+        .spotlight-box { background: linear-gradient(145deg, #1e293b, #0f172a); position: relative; overflow: hidden; border: 1px solid #334155; }
+        .spotlight-effect { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, transparent 50%); animation: moveSpotlight 6s infinite alternate; pointer-events: none; }
+        @keyframes moveSpotlight { from { transform: translate(-10%, -10%); } to { transform: translate(10%, 10%); } }
     </style>
 </head>
 <body class="bg-slate-900 text-white font-sans min-h-screen">
@@ -53,32 +35,39 @@
                     </span>
                     <h2 class="text-3xl md:text-4xl font-black mb-2">Biryağ Ayçiçek Yağı 5 L</h2>
                     <p class="text-slate-400 max-w-md">RadarX botları tarafından doğrulandı: Piyasa ortalamasının tam %14 altında!</p>
-                    <div class="mt-6 flex items-baseline gap-4">
-                        <span class="text-4xl font-black text-white">799,00 TL</span>
+                    <div class="mt-6 flex items-baseline gap-4 text-white">
+                        <span class="text-4xl font-black">799,00 TL</span>
                         <span class="text-xl text-slate-500 line-through">925,00 TL</span>
                     </div>
                 </div>
-                <div class="w-48 h-48 bg-slate-800 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-700 relative group">
-                    <i class="fas fa-bottle-droplet text-6xl text-cyan-500/50 group-hover:scale-110 transition-transform duration-500"></i>
-                    <div class="absolute -top-4 -right-4 bg-red-500 text-white font-bold w-14 h-14 rounded-full flex items-center justify-center rotate-12 shadow-lg border-4 border-slate-900">
-                        -%14
-                    </div>
+                <div class="w-48 h-48 bg-slate-800 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-700 relative">
+                    <i class="fas fa-bottle-droplet text-6xl text-cyan-500/50"></i>
+                    <div class="absolute -top-4 -right-4 bg-red-500 text-white font-bold w-14 h-14 rounded-full flex items-center justify-center rotate-12 shadow-lg border-4 border-slate-900">-%14</div>
                 </div>
             </div>
         </div>
 
         <div class="max-w-3xl mx-auto text-center mb-24">
-            <h3 class="text-2xl font-bold mb-6">Fiyatları Dürüstçe <span class="text-cyan-400">Sorgula</span></h3>
             <div class="relative group">
                 <input type="text" placeholder="Ürün veya market ara..." 
                     class="w-full p-5 pl-14 rounded-2xl bg-slate-800 border-2 border-slate-700 focus:border-cyan-500 outline-none transition-all text-lg shadow-2xl">
                 <i class="fas fa-search absolute left-6 top-6 text-slate-500 group-focus-within:text-cyan-400"></i>
                 <button onclick="window.location.href='firsat_merkezi.html'" 
-                    class="absolute right-3 top-3 bg-cyan-500 text-slate-900 px-10 py-2.5 rounded-xl font-bold hover:bg-cyan-400 transition-all shadow-lg">
-                    TARA
-                </button>
+                    class="absolute right-3 top-3 bg-cyan-500 text-slate-900 px-10 py-2.5 rounded-xl font-bold hover:bg-cyan-400 transition-all shadow-lg">TARA</button>
             </div>
         </div>
+
+        <section class="mb-24 py-16 border-t border-slate-800">
+            <div class="text-center max-w-3xl mx-auto">
+                <i class="fas fa-shield-halved text-cyan-500 text-4xl mb-6"></i>
+                <h3 class="text-3xl font-bold mb-6 text-white">RadarX <span class="text-cyan-400">Manifestosu</span></h3>
+                <div class="space-y-6 text-lg text-slate-400 italic">
+                    <p>"Biz sahte indirimlere, gizli zamlara ve kafa karıştıran etiketlere karşı dürüst bir kalkan olmak için buradayız."</p>
+                    <p>"Uybat Tech vizyonuyla, her bir veriyi süzüyor, gerçek fırsatı dürüstçe gün yüzüne çıkarıyoruz. Bizim için her kuruş, emeğinizin bir parçasıdır."</p>
+                    <p class="font-bold text-cyan-400 not-italic uppercase tracking-widest text-sm">— Dürüstlüğün Yeni Adresi —</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="border-t border-slate-800 p-10 text-center text-slate-600 text-[10px] tracking-widest uppercase">
