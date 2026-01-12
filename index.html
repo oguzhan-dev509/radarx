@@ -9,20 +9,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Sağa sola kaymayı (overflow) dürüstçe engelleyen temel mühürler */
-        html, body { 
-            overflow-x: hidden; 
-            width: 100%; 
-            margin: 0; 
-            padding: 0;
-            -webkit-overflow-scrolling: touch;
-        }
+        html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; -webkit-overflow-scrolling: touch; }
         .radar-pulse { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); } }
         .market-card { transition: all 0.3s ease; border: 1px solid #334155; }
         .market-card:hover { transform: translateY(-5px); border-color: #22d3ee; }
         @keyframes ring { 0% { transform: rotate(0); } 10% { transform: rotate(30deg); } 20% { transform: rotate(-28deg); } 50% { transform: rotate(30deg); } 100% { transform: rotate(0); } }
-        .alarm-ring { animation: ring 2s infinite; }
+        .alarm-ring { animation: ring 2s infinite; display: inline-block; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
@@ -34,16 +27,21 @@
             </div>
             <h1 class="text-2xl font-bold tracking-wider text-cyan-400">RadarX</h1>
         </div>
-        <div class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Uybat <span class="text-cyan-500">Tech</span></div>
+        
+        <div class="flex items-center gap-4">
+            <a href="satici_paneli.html" class="text-[10px] font-bold text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400 hover:text-slate-900 transition-all uppercase tracking-widest">
+                <i class="fas fa-store mr-1"></i> Satış Yap
+            </a>
+            <div class="hidden sm:block text-[10px] font-medium text-slate-500 uppercase tracking-widest">Uybat <span class="text-cyan-500">Tech</span></div>
+        </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-32 overflow-x-hidden">
-        
         <div class="bg-gradient-to-br from-slate-800 to-slate-950 rounded-3xl p-8 mb-12 border border-slate-700 shadow-2xl relative overflow-hidden">
             <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
                 <div>
                     <span class="bg-cyan-500/20 text-cyan-400 px-4 py-1 rounded-full text-[10px] font-bold uppercase mb-4 inline-block border border-cyan-500/30">GÜNÜN DÜRÜST ŞAMPİYONU</span>
-                    <h2 class="text-3xl font-black mb-2 leading-tight">Biryağ Ayçiçek Yağı 5 L</h2>
+                    <h2 class="text-3xl font-black mb-2">Biryağ Ayçiçek Yağı 5 L</h2>
                     <div class="flex justify-center md:justify-start items-baseline gap-4 mt-4">
                         <span class="text-4xl font-black text-white">799,00 TL</span>
                         <span class="text-xl text-slate-500 line-through">925,00 TL</span>
@@ -68,78 +66,61 @@
                         <i class="fas fa-bell text-cyan-400 alarm-ring text-xl"></i>
                     </div>
                     <div>
-                        <h4 class="text-sm font-bold text-white uppercase tracking-tighter">Fiyat Takip Radarı</h4>
-                        <p class="text-[10px] text-slate-400 italic">Dürüst fiyat için biz nöbetteyiz.</p>
+                        <h4 class="text-sm font-bold text-white uppercase">Fiyat Takip Radarı</h4>
+                        <p class="text-[10px] text-slate-400 italic">Dürüstçe nöbetteyiz.</p>
                     </div>
                 </div>
-                <button onclick="alert('Takip Radarı Aktif!')" class="w-full sm:w-auto bg-cyan-500/10 text-cyan-400 border border-cyan-400/30 px-6 py-2 rounded-lg text-xs font-bold hover:bg-cyan-500 hover:text-slate-900 transition-all">RADARA AL</button>
+                <button onclick="alert('Takip Radarı Aktif!')" class="bg-cyan-500/10 text-cyan-400 border border-cyan-400/30 px-6 py-2 rounded-lg text-xs font-bold hover:bg-cyan-500 hover:text-slate-900 transition-all">RADARA AL</button>
             </div>
         </div>
 
         <section class="mb-12">
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-book-open text-cyan-400"></i> Haftalık Kataloglar</h3>
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-slate-200"><i class="fas fa-book-open text-cyan-400"></i> Haftalık Kataloglar</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="#" class="bg-slate-800/40 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 hover:border-cyan-500 transition-all group">
-                    <i class="fas fa-file-pdf text-cyan-400 text-xl group-hover:scale-110 transition-transform"></i>
-                    <span class="text-[9px] font-bold uppercase tracking-widest">A101 Aktüel</span>
+                <a href="#" class="bg-slate-800/40 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 hover:border-cyan-500 transition-all">
+                    <i class="fas fa-file-pdf text-cyan-400 text-xl"></i>
+                    <span class="text-[9px] font-bold uppercase">A101 Aktüel</span>
                 </a>
-                <a href="#" class="bg-slate-800/40 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 hover:border-red-500 transition-all group">
-                    <i class="fas fa-file-pdf text-red-500 text-xl group-hover:scale-110 transition-transform"></i>
-                    <span class="text-[9px] font-bold uppercase tracking-widest">BİM Aktüel</span>
+                <a href="#" class="bg-slate-800/40 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 hover:border-red-500 transition-all">
+                    <i class="fas fa-file-pdf text-red-500 text-xl"></i>
+                    <span class="text-[9px] font-bold uppercase">BİM Aktüel</span>
                 </a>
-                <a href="#" class="bg-slate-800/40 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 hover:border-yellow-500 transition-all group">
-                    <i class="fas fa-file-pdf text-yellow-500 text-xl group-hover:scale-110 transition-transform"></i>
-                    <span class="text-[9px] font-bold uppercase tracking-widest">ŞOK Fırsat</span>
+                <a href="#" class="bg-slate-800/40 border border-slate-700 p-4 rounded-2xl flex flex-col items-center gap-2 hover:border-yellow-500 transition-all">
+                    <i class="fas fa-file-pdf text-yellow-500 text-xl"></i>
+                    <span class="text-[9px] font-bold uppercase">ŞOK Fırsat</span>
                 </a>
                 <a href="#" class="bg-orange-500/10 border border-orange-500/30 p-4 rounded-2xl flex flex-col items-center gap-2 hover:bg-orange-600 transition-all group">
-                    <i class="fas fa-file-pdf text-orange-400 text-xl group-hover:text-white transition-all"></i>
-                    <span class="text-[9px] font-bold uppercase tracking-widest group-hover:text-white transition-all">Migros İndirim</span>
+                    <i class="fas fa-file-pdf text-orange-400 text-xl group-hover:text-white"></i>
+                    <span class="text-[9px] font-bold uppercase group-hover:text-white">Migros İndirim</span>
                 </a>
             </div>
         </section>
 
         <section class="mb-12 bg-slate-800/20 p-6 rounded-3xl border border-slate-800">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-xl font-bold flex items-center gap-3"><i class="fas fa-location-dot text-cyan-400"></i> Yakındakiler</h3>
-                <button onclick="alert('Konum güncelleniyor...')" class="text-[10px] font-bold text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg">GÜNCELLE</button>
-            </div>
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-slate-200"><i class="fas fa-location-dot text-cyan-400"></i> Yakındakiler</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <div class="bg-slate-800/50 p-4 rounded-xl flex items-center justify-between border border-slate-700">
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 bg-cyan-500/20 rounded flex items-center justify-center text-cyan-400"><i class="fas fa-store text-sm"></i></div>
-                        <div><h4 class="font-bold text-sm">A101 - Merkez</h4><p class="text-xs text-slate-500">350 Metre</p></div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-store text-cyan-400 text-sm"></i>
+                        <div><h4 class="font-bold text-sm">A101 Merkez</h4><p class="text-[10px] text-slate-500">350 Metre</p></div>
                     </div>
-                    <span class="text-[9px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded font-bold uppercase">Açık</span>
+                    <span class="text-[8px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded font-bold uppercase">Açık</span>
                 </div>
                 <div class="bg-slate-800/50 p-4 rounded-xl flex items-center justify-between border border-slate-700">
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 bg-orange-500/20 rounded flex items-center justify-center text-orange-400"><i class="fas fa-store text-sm"></i></div>
-                        <div><h4 class="font-bold text-sm">MİGROS Jet</h4><p class="text-xs text-slate-500">850 Metre</p></div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-store text-orange-400 text-sm"></i>
+                        <div><h4 class="font-bold text-sm text-slate-200">Migros Jet</h4><p class="text-[10px] text-slate-500">850 Metre</p></div>
                     </div>
-                    <span class="text-[9px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded font-bold uppercase">Açık</span>
+                    <span class="text-[8px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded font-bold uppercase">Açık</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="mb-20 text-center">
-            <h3 class="text-xl font-bold mb-6 flex items-center justify-center gap-3"><i class="fas fa-fire text-orange-500"></i>Bugünün Fırsatları</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="market-card bg-slate-800/40 p-5 rounded-2xl"><i class="fas fa-cheese text-2xl text-slate-600 mb-2"></i><h4 class="text-[10px] font-bold truncate">Süzme Peynir</h4><p class="text-cyan-400 font-bold text-sm">85,00 TL</p></div>
-                <div class="market-card bg-slate-800/40 p-5 rounded-2xl"><i class="fas fa-cow text-2xl text-slate-600 mb-2"></i><h4 class="text-[10px] font-bold truncate">Süt 1L</h4><p class="text-cyan-400 font-bold text-sm">29,50 TL</p></div>
-                <div class="market-card bg-orange-500/5 border-orange-500/20 p-5 rounded-2xl"><i class="fas fa-apple-whole text-2xl text-orange-500/50 mb-2"></i><h4 class="text-[10px] font-bold truncate text-orange-200 uppercase">Elma kg</h4><p class="text-orange-400 font-bold text-sm">34,90 TL</p></div>
-                <div class="market-card bg-slate-800/40 p-5 rounded-2xl"><i class="fas fa-bread-slice text-2xl text-slate-600 mb-2"></i><h4 class="text-[10px] font-bold truncate">Tost Ekmeği</h4><p class="text-cyan-400 font-bold text-sm">18,00 TL</p></div>
-                <div class="market-card bg-slate-800/40 p-5 rounded-2xl"><i class="fas fa-egg text-2xl text-slate-600 mb-2"></i><h4 class="text-[10px] font-bold truncate">Yumurta</h4><p class="text-cyan-400 font-bold text-sm">99,00 TL</p></div>
             </div>
         </section>
 
         <section class="py-24 border-t border-slate-800 text-center">
-            <div class="max-w-2xl mx-auto px-4">
-                <i class="fas fa-shield-halved text-cyan-500/40 text-3xl mb-8"></i>
-                <h3 class="text-2xl font-bold mb-8">RadarX <span class="text-cyan-400">Manifestosu</span></h3>
-                <div class="space-y-6 text-slate-400 text-sm italic leading-relaxed">
-                    <p>"Biz sahte indirimlere ve gizli zamlara karşı dürüst bir kalkan olmak için buradayız."</p>
-                    <p>"Uybat Tech vizyonuyla veriyi dürüstçe işliyor, gerçek fırsatı gün yüzüne çıkarıyoruz. Bizim için her kuruş, emeğinizin bir parçasıdır."</p>
-                </div>
+            <h3 class="text-2xl font-bold mb-8 tracking-tight">RadarX <span class="text-cyan-400">Manifestosu</span></h3>
+            <div class="space-y-6 text-slate-400 text-sm italic leading-relaxed max-w-2xl mx-auto px-4">
+                <p>"Biz sahte indirimlere ve gizli zamlara karşı dürüst bir kalkan olmak için buradayız."</p>
+                <p>"Uybat Tech vizyonuyla veriyi dürüstçe işliyor, gerçek fırsatı gün yüzüne çıkarıyoruz."</p>
             </div>
         </section>
     </main>
