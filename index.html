@@ -3,108 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RadarX | Dürüst Market Radarı</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#0f172a">
+    <title>RadarX | Uybat Tech Dürüst İndirim Radarı</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .radar-pulse { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); } }
-        .market-card { transition: all 0.3s ease; border: 1px solid #334155; }
+        .market-card { transition: all 0.3s ease; border: 1px solid #334155; height: 100%; }
         .market-card:hover { transform: translateY(-5px); border-color: #22d3ee; background: #1e293b; }
-        .active-tab { border-bottom: 4px solid #22d3ee; color: #22d3ee !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="bg-slate-900 text-white font-sans min-h-screen">
-    <nav class="p-6 flex justify-between items-center border-b border-slate-800 sticky top-0 bg-slate-900/90 backdrop-blur-md z-50">
+<body class="bg-slate-900 text-white font-sans min-h-screen flex flex-col">
+    <nav class="p-6 flex justify-between items-center border-b border-slate-800 sticky top-0 bg-slate-900/95 backdrop-blur-md z-50">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center radar-pulse">
                 <i class="fas fa-crosshairs text-slate-900 text-xl"></i>
             </div>
-            <h1 class="text-2xl font-bold text-cyan-400">RadarX</h1>
+            <h1 class="text-2xl font-bold tracking-wider text-cyan-400">RadarX</h1>
         </div>
-        <div class="text-xs text-slate-500 uppercase">Migros <span class="text-orange-500">Eklendi</span></div>
+        <div class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Uybat <span class="text-cyan-500">Tech</span></div>
     </nav>
 
-    <main class="max-w-6xl mx-auto mt-8 px-4">
-        <div class="bg-gradient-to-br from-slate-800 to-slate-950 rounded-3xl p-6 mb-10 border border-slate-700 shadow-2xl">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+    <main class="max-w-6xl mx-auto w-full px-6 pt-10 pb-24 flex-grow">
+        <div class="bg-gradient-to-br from-slate-800 to-slate-950 rounded-3xl p-8 mb-16 border border-slate-700 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fas fa-bolt text-9xl text-cyan-500"></i></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="text-left">
-                    <span class="text-cyan-400 text-[10px] font-bold tracking-widest uppercase block mb-2">🚀 Haftanın Şampiyonu</span>
-                    <h2 class="text-2xl font-black mb-1">Biryağ Ayçiçek Yağı 5 L</h2>
-                    <div class="flex items-center gap-3 mt-4">
-                        <span class="text-3xl font-bold text-white">799,00 TL</span>
-                        <span class="text-sm text-slate-500 line-through">925,00 TL</span>
+                    <span class="bg-cyan-500/20 text-cyan-400 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block border border-cyan-500/30">
+                        <i class="fas fa-star mr-2"></i> GÜNÜN DÜRÜST ŞAMPİYONU
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-black mb-2">Biryağ Ayçiçek Yağı 5 L</h2>
+                    <p class="text-slate-400 text-sm max-w-md mb-6 italic">RadarX botları tarafından doğrulandı: Piyasa ortalamasının tam %14 altında!</p>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-4xl font-black text-white">799,00 TL</span>
+                        <span class="text-xl text-slate-500 line-through">925,00 TL</span>
                     </div>
                 </div>
-                <button onclick="window.location.href='firsat_merkezi.html'" class="bg-cyan-500 text-slate-900 px-6 py-3 rounded-xl font-bold w-full md:w-auto">TARA & KEŞFET</button>
+                <div class="w-40 h-40 bg-slate-800 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-700 relative">
+                    <i class="fas fa-bottle-droplet text-5xl text-cyan-500/40"></i>
+                    <div class="absolute -top-3 -right-3 bg-red-500 text-white font-bold w-12 h-12 rounded-full flex items-center justify-center rotate-12 shadow-lg border-2 border-slate-900 text-xs">-%14</div>
+                </div>
             </div>
         </div>
 
-        <section class="mb-12">
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                <i class="fas fa-bolt text-yellow-400"></i> Bugünün Dürüst 5'lisi
-            </h3>
+        <section class="mb-20">
+            <div class="flex justify-between items-end mb-8">
+                <h3 class="text-2xl font-bold flex items-center gap-3">
+                    <i class="fas fa-fire text-orange-500"></i> Bugünün Dürüst 5'lisi
+                </h3>
+            </div>
             
-            <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar mb-6">
-                <button class="px-6 py-2 bg-slate-800 rounded-full text-sm font-bold border border-slate-700 hover:border-cyan-500 transition-all">A101</button>
-                <button class="px-6 py-2 bg-slate-800 rounded-full text-sm font-bold border border-slate-700 hover:border-red-500 transition-all">BİM</button>
-                <button class="px-6 py-2 bg-slate-800 rounded-full text-sm font-bold border border-slate-700 hover:border-yellow-500 transition-all">ŞOK</button>
-                <button class="px-6 py-2 bg-orange-600/20 text-orange-400 rounded-full text-sm font-bold border border-orange-500/50 hover:bg-orange-500 hover:text-white transition-all">MİGROS</button>
+            <div class="flex gap-3 overflow-x-auto pb-6 no-scrollbar mb-8">
+                <button class="px-8 py-2.5 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700 hover:border-cyan-500 transition-all">A101</button>
+                <button class="px-8 py-2.5 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700 hover:border-red-500 transition-all">BİM</button>
+                <button class="px-8 py-2.5 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700 hover:border-yellow-500 transition-all">ŞOK</button>
+                <button class="px-8 py-2.5 bg-orange-600/20 text-orange-400 rounded-xl text-xs font-bold border border-orange-500/50 hover:bg-orange-500 hover:text-white transition-all">MİGROS</button>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="market-card bg-slate-800/50 p-4 rounded-2xl">
-                    <div class="aspect-square bg-slate-700 rounded-lg mb-3 flex items-center justify-center relative">
-                        <i class="fas fa-cheese text-2xl text-slate-500"></i>
-                        <span class="absolute top-1 right-1 bg-red-500 text-[8px] px-2 py-0.5 rounded">-%20</span>
-                    </div>
-                    <h4 class="text-xs font-bold truncate">Süzme Peynir 500g</h4>
-                    <p class="text-cyan-400 text-sm font-bold mt-1">85,00 TL</p>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center relative"><i class="fas fa-cheese text-3xl text-slate-600"></i><span class="absolute top-2 right-2 bg-red-500 text-[8px] px-2 py-0.5 rounded">-%20</span></div>
+                    <h4 class="text-[11px] font-bold truncate text-slate-300">Süzme Peynir 500g</h4>
+                    <p class="text-cyan-400 font-extrabold mt-1">85,00 TL</p>
                 </div>
-                <div class="market-card bg-slate-800/50 p-4 rounded-2xl">
-                    <div class="aspect-square bg-slate-700 rounded-lg mb-3 flex items-center justify-center">
-                        <i class="fas fa-cow text-2xl text-slate-500"></i>
-                    </div>
-                    <h4 class="text-xs font-bold truncate">Tam Yağlı Süt 1L</h4>
-                    <p class="text-cyan-400 text-sm font-bold mt-1">29,50 TL</p>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-cow text-3xl text-slate-600"></i></div>
+                    <h4 class="text-[11px] font-bold truncate text-slate-300">Tam Yağlı Süt 1L</h4>
+                    <p class="text-cyan-400 font-extrabold mt-1">29,50 TL</p>
                 </div>
-                <div class="market-card bg-orange-500/5 border-orange-500/20 p-4 rounded-2xl">
-                    <div class="aspect-square bg-orange-500/10 rounded-lg mb-3 flex items-center justify-center relative">
-                        <i class="fas fa-apple-whole text-2xl text-orange-500"></i>
-                        <span class="absolute top-1 right-1 bg-orange-500 text-[8px] px-2 py-0.5 rounded">MİGROS</span>
-                    </div>
-                    <h4 class="text-xs font-bold truncate">Amasya Elma kg</h4>
-                    <p class="text-orange-400 text-sm font-bold mt-1">34,90 TL</p>
+                <div class="market-card bg-orange-500/5 border-orange-500/30 p-5 rounded-2xl">
+                    <div class="aspect-square bg-orange-500/10 rounded-xl mb-4 flex items-center justify-center relative"><i class="fas fa-apple-whole text-3xl text-orange-500/50"></i><span class="absolute top-2 right-2 bg-orange-500 text-[8px] px-2 py-0.5 rounded text-white font-bold">MİGROS</span></div>
+                    <h4 class="text-[11px] font-bold truncate text-orange-100">Amasya Elma kg</h4>
+                    <p class="text-orange-400 font-extrabold mt-1">34,90 TL</p>
                 </div>
-                <div class="market-card bg-slate-800/50 p-4 rounded-2xl">
-                    <div class="aspect-square bg-slate-700 rounded-lg mb-3 flex items-center justify-center">
-                        <i class="fas fa-bread-slice text-2xl text-slate-500"></i>
-                    </div>
-                    <h4 class="text-xs font-bold truncate">Tost Ekmeği</h4>
-                    <p class="text-cyan-400 text-sm font-bold mt-1">18,00 TL</p>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-bread-slice text-3xl text-slate-600"></i></div>
+                    <h4 class="text-[11px] font-bold truncate text-slate-300">Tost Ekmeği</h4>
+                    <p class="text-cyan-400 font-extrabold mt-1">18,00 TL</p>
                 </div>
-                <div class="market-card bg-slate-800/50 p-4 rounded-2xl">
-                    <div class="aspect-square bg-slate-700 rounded-lg mb-3 flex items-center justify-center">
-                        <i class="fas fa-egg text-2xl text-slate-500"></i>
-                    </div>
-                    <h4 class="text-xs font-bold truncate">30'lu Yumurta</h4>
-                    <p class="text-cyan-400 text-sm font-bold mt-1">99,00 TL</p>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-egg text-3xl text-slate-600"></i></div>
+                    <h4 class="text-[11px] font-bold truncate text-slate-300">30'lu Yumurta</h4>
+                    <p class="text-cyan-400 font-extrabold mt-1">99,00 TL</p>
                 </div>
             </div>
         </section>
 
-        <section class="py-12 border-t border-slate-800 text-center">
-            <i class="fas fa-shield-halved text-cyan-500 text-2xl mb-4"></i>
-            <h3 class="text-lg font-bold mb-4">RadarX Manifestosu</h3>
-            <p class="text-slate-400 text-sm italic italic px-4">"Uybat Tech vizyonuyla, her bir veriyi dürüstçe süzüyor, gerçek fırsatı gün yüzüne çıkarıyoruz."</p>
+        <div class="max-w-3xl mx-auto text-center mb-32 bg-slate-800/20 p-8 rounded-3xl border border-slate-800">
+            <h3 class="text-xl font-bold mb-6 text-slate-300">Fiyatları Dürüstçe <span class="text-cyan-400">Sorgula</span></h3>
+            <div class="relative group">
+                <input type="text" placeholder="Ürün veya market ara..." 
+                    class="w-full p-5 pl-14 rounded-2xl bg-slate-900 border-2 border-slate-700 focus:border-cyan-500 outline-none transition-all text-lg shadow-2xl">
+                <i class="fas fa-search absolute left-6 top-6 text-slate-500 group-focus-within:text-cyan-400"></i>
+                <button onclick="window.location.href='firsat_merkezi.html'" 
+                    class="absolute right-3 top-3 bg-cyan-500 text-slate-900 px-10 py-2.5 rounded-xl font-bold hover:bg-cyan-400 transition-all shadow-lg active:scale-95">
+                    TARA
+                </button>
+            </div>
+        </div>
+
+        <section class="py-20 border-t border-slate-800 text-center">
+            <div class="max-w-3xl mx-auto px-4">
+                <i class="fas fa-shield-halved text-cyan-500 text-4xl mb-8 opacity-50"></i>
+                <h3 class="text-3xl font-bold mb-8 text-white tracking-tight">RadarX <span class="text-cyan-400">Manifestosu</span></h3>
+                <div class="space-y-8 text-lg text-slate-400 leading-relaxed">
+                    <p class="italic">"Biz sahte indirimlere, gizli zamlara ve kafa karıştıran etiketlere karşı dürüst bir kalkan olmak için buradayız."</p>
+                    <p class="italic">"Uybat Tech vizyonuyla, her bir veriyi süzüyor, gerçek fırsatı dürüstçe gün yüzüne çıkarıyoruz. Bizim için her kuruş, emeğinizin bir parçasıdır."</p>
+                    <p class="font-bold text-cyan-500 not-italic uppercase tracking-[0.3em] text-[10px] pt-4">— DÜRÜSTLÜĞÜN YENİ ADRESİ —</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="p-6 text-center text-slate-600 text-[10px] tracking-widest uppercase border-t border-slate-800">
-        RadarX © 2026 | Uybat Tech
+    <footer class="p-10 text-center text-slate-600 text-[9px] tracking-[0.2em] uppercase border-t border-slate-800/50 bg-slate-900">
+        RadarX © 2026 | Uybat Teknoloji Yazılım ve Tic. Ltd. Şti.
     </footer>
 </body>
 </html>
