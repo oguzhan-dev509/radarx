@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RadarX | Dürüst Konum Servisi</title>
+    <title>RadarX | Uybat Tech Dürüst İndirim Radarı</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0f172a">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         .radar-pulse { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); } }
+        .spotlight-box { background: linear-gradient(145deg, #1e293b, #0f172a); position: relative; overflow: hidden; border: 1px solid #334155; }
+        .market-card { transition: all 0.3s ease; border: 1px solid #334155; height: 100%; }
+        .market-card:hover { transform: translateY(-5px); border-color: #22d3ee; background: #1e293b; }
         .location-card { background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; transition: all 0.3s ease; }
-        .location-card:hover { border-color: #22d3ee; transform: translateX(5px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="bg-slate-900 text-white font-sans min-h-screen">
@@ -19,13 +28,34 @@
             <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center radar-pulse">
                 <i class="fas fa-crosshairs text-slate-900 text-xl"></i>
             </div>
-            <h1 class="text-2xl font-bold text-cyan-400">RadarX</h1>
+            <h1 class="text-2xl font-bold tracking-wider text-cyan-400">RadarX</h1>
         </div>
-        <div class="text-[10px] text-slate-500 uppercase tracking-widest">Uybat <span class="text-cyan-500">Tech</span></div>
+        <div class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Uybat <span class="text-cyan-500">Tech</span></div>
     </nav>
 
-    <main class="max-w-6xl mx-auto w-full px-6 pt-10 pb-24">
-        <div class="max-w-3xl mx-auto text-center mb-12">
+    <main class="max-w-6xl mx-auto w-full px-6 pt-8 pb-24">
+        
+        <div class="spotlight-box rounded-3xl p-8 mb-12 shadow-2xl relative">
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-left">
+                    <span class="bg-cyan-500/20 text-cyan-400 px-4 py-1 rounded-full text-[10px] font-bold uppercase mb-4 inline-block border border-cyan-500/30">
+                        <i class="fas fa-star mr-2"></i> GÜNÜN DÜRÜST ŞAMPİYONU
+                    </span>
+                    <h2 class="text-3xl font-black mb-2">Biryağ Ayçiçek Yağı 5 L</h2>
+                    <div class="flex items-baseline gap-4 mt-4">
+                        <span class="text-4xl font-black text-white">799,00 TL</span>
+                        <span class="text-xl text-slate-500 line-through">925,00 TL</span>
+                    </div>
+                </div>
+                <div class="w-32 h-32 bg-slate-800 rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-700 relative">
+                    <i class="fas fa-bottle-droplet text-4xl text-cyan-500/40"></i>
+                    <div class="absolute -top-3 -right-3 bg-red-500 text-white font-bold w-10 h-10 rounded-full flex items-center justify-center rotate-12 shadow-lg border-2 border-slate-900 text-[10px]">-%14</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h3 class="text-lg font-bold mb-6 text-slate-300">Fiyatları Dürüstçe <span class="text-cyan-400">Sorgula</span></h3>
             <div class="relative group">
                 <input type="text" placeholder="Ürün veya market ara..." class="w-full p-5 pl-14 rounded-2xl bg-slate-800 border-2 border-slate-700 focus:border-cyan-500 outline-none text-lg">
                 <i class="fas fa-search absolute left-6 top-6 text-slate-500"></i>
@@ -33,52 +63,76 @@
             </div>
         </div>
 
-        <section class="mb-16">
+        <section class="mb-16 bg-slate-800/20 p-6 rounded-3xl border border-slate-800">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-xl font-bold flex items-center gap-3">
                     <i class="fas fa-location-dot text-cyan-400"></i> Yakınımdaki Marketler
                 </h3>
-                <button onclick="konumBul()" class="text-xs font-bold text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400/10 transition-all">
-                    KONUMU GÜNCELLE
-                </button>
+                <button onclick="alert('Konum güncelleniyor...')" class="text-[10px] font-bold text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg">KONUMU GÜNCELLE</button>
             </div>
-
-            <div id="market-listesi" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="location-card p-4 rounded-xl flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">A101 - Merkez Şubesi</h4>
-                            <p class="text-xs text-slate-500">350 Metre Yakınında</p>
-                        </div>
+                        <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center text-cyan-400"><i class="fas fa-store"></i></div>
+                        <div><h4 class="font-bold text-sm">A101 - Merkez</h4><p class="text-xs text-slate-500">350 Metre</p></div>
                     </div>
                     <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded font-bold">AÇIK</span>
                 </div>
-
                 <div class="location-card p-4 rounded-xl flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">MİGROS Jet - Sahil</h4>
-                            <p class="text-xs text-slate-500">850 Metre Yakınında</p>
-                        </div>
+                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400"><i class="fas fa-store"></i></div>
+                        <div><h4 class="font-bold text-sm">MİGROS Jet</h4><p class="text-xs text-slate-500">850 Metre</p></div>
                     </div>
                     <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded font-bold">AÇIK</span>
                 </div>
             </div>
         </section>
 
-        </main>
+        <section class="mb-16">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3"><i class="fas fa-fire text-orange-500"></i> Bugünün Dürüst 5'lisi</h3>
+            <div class="flex gap-3 overflow-x-auto pb-6 no-scrollbar mb-4">
+                <button class="px-8 py-2.5 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700">A101</button>
+                <button class="px-8 py-2.5 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700">BİM</button>
+                <button class="px-8 py-2.5 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700">ŞOK</button>
+                <button class="px-8 py-2.5 bg-orange-600/20 text-orange-400 rounded-xl text-xs font-bold border border-orange-500/50">MİGROS</button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-cheese text-2xl text-slate-600"></i></div>
+                    <h4 class="text-[10px] font-bold truncate">Süzme Peynir</h4>
+                    <p class="text-cyan-400 font-bold mt-1">85,00 TL</p>
+                </div>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-cow text-2xl text-slate-600"></i></div>
+                    <h4 class="text-[10px] font-bold truncate">Süt 1L</h4>
+                    <p class="text-cyan-400 font-bold mt-1">29,50 TL</p>
+                </div>
+                <div class="market-card bg-orange-500/5 p-5 rounded-2xl border-orange-500/20">
+                    <div class="aspect-square bg-orange-500/10 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-apple-whole text-2xl text-orange-500/50"></i></div>
+                    <h4 class="text-[10px] font-bold truncate">Elma kg</h4>
+                    <p class="text-orange-400 font-bold mt-1">34,90 TL</p>
+                </div>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-bread-slice text-2xl text-slate-600"></i></div>
+                    <h4 class="text-[10px] font-bold truncate">Tost Ekmeği</h4>
+                    <p class="text-cyan-400 font-bold mt-1">18,00 TL</p>
+                </div>
+                <div class="market-card bg-slate-800/40 p-5 rounded-2xl">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center"><i class="fas fa-egg text-2xl text-slate-600"></i></div>
+                    <h4 class="text-[10px] font-bold truncate">Yumurta</h4>
+                    <p class="text-cyan-400 font-bold mt-1">99,00 TL</p>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        function konumBul() {
-            alert("RadarX dürüstçe konumuna erişmek istiyor. Onaylıyor musun Rehberim?");
-            // Burada gelecekte gerçek GPS verisi işlenecek
-        }
-    </script>
+        <section class="py-16 border-t border-slate-800 text-center">
+            <h3 class="text-2xl font-bold mb-6">RadarX <span class="text-cyan-400">Manifestosu</span></h3>
+            <p class="italic text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">"Biz sahte indirimlere ve gizli zamlara karşı dürüst bir kalkan olmak için buradayız. Uybat Tech vizyonuyla veriyi dürüstçe işliyoruz."</p>
+        </section>
+    </main>
+
+    <footer class="p-8 text-center text-slate-600 text-[10px] uppercase border-t border-slate-800">
+        RadarX © 2026 | Uybat Tech
+    </footer>
 </body>
 </html>
