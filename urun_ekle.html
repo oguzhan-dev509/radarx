@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadarX | Ürün Yönetimi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .input-focus { transition: all 0.3s ease; }
+        .input-focus:focus { border-color: #22d3ee; box-shadow: 0 0 15px rgba(34, 211, 238, 0.2); }
+        .glass-card { background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(51, 65, 85, 1); }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-sans min-h-screen">
+    <nav class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-plus text-slate-900 text-sm"></i>
+            </div>
+            <h1 class="text-xl font-bold text-cyan-400">RadarX <span class="text-white">Envanter</span></h1>
+        </div>
+        <a href="satici_paneli.html" class="text-xs text-slate-500 hover:text-white transition-all"><i class="fas fa-arrow-left mr-1"></i> Geri Dön</a>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-10">
+        <div class="mb-10 text-center">
+            <h2 class="text-2xl font-bold mb-2">Yeni Ürün Ekle</h2>
+            <p class="text-slate-500 text-sm italic">"Dürüst fiyat, hızlı satışın anahtarıdır."</p>
+        </div>
+
+        <form class="space-y-8">
+            <div class="glass-card p-8 rounded-3xl space-y-6 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Ürün Adı / Başlığı</label>
+                        <input type="text" class="w-full bg-slate-800 border border-slate-700 p-4 rounded-xl outline-none input-focus" placeholder="Örn: Süzme Peynir 500g">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Sektör / Kategori</label>
+                        <select class="w-full bg-slate-800 border border-slate-700 p-4 rounded-xl outline-none input-focus appearance-none">
+                            <option>Gıda & Market</option>
+                            <option>Kozmetik & Kişisel Bakım</option>
+                            <option>Elektronik & Beyaz Eşya</option>
+                            <option>Tekstil & Giyim</option>
+                            <option>İnşaat Malzemeleri</option>
+                            <option>Medikal & Sağlık</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Dürüst Fiyat (TL)</label>
+                        <input type="number" class="w-full bg-slate-800 border border-slate-700 p-4 rounded-xl outline-none input-focus" placeholder="00.00">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Eski Fiyat (Opsiyonel)</label>
+                        <input type="number" class="w-full bg-slate-800 border border-slate-700 p-4 rounded-xl outline-none input-focus" placeholder="İndirim öncesi">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Stok Adedi</label>
+                        <input type="number" class="w-full bg-slate-800 border border-slate-700 p-4 rounded-xl outline-none input-focus" placeholder="Mevcut miktar">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Ürün Açıklaması</label>
+                    <textarea class="w-full bg-slate-800 border border-slate-700 p-4 rounded-xl outline-none input-focus h-32" placeholder="Ürün özellikleri, dürüst detaylar..."></textarea>
+                </div>
+
+                <div class="border-2 border-dashed border-slate-700 rounded-2xl p-8 text-center hover:border-cyan-500/50 transition-all">
+                    <i class="fas fa-cloud-arrow-up text-3xl text-slate-600 mb-4"></i>
+                    <p class="text-xs text-slate-500">Ürün Görselini Buraya Sürükleyin veya Seçin</p>
+                </div>
+            </div>
+
+            <button type="button" onclick="alert('Ürün dürüstçe kuyruğa eklendi. Kontrol sonrası yayına girecek!')" class="w-full bg-cyan-500 text-slate-900 py-5 rounded-2xl font-black text-lg hover:bg-cyan-400 transition-all shadow-xl shadow-cyan-500/20 uppercase tracking-widest">
+                Radarda Yayınla
+            </button>
+        </form>
+    </main>
+
+    <footer class="text-center p-10 text-slate-600 text-[10px] uppercase tracking-widest">
+        Uybat Tech | RadarX Marketplace Engine © 2026
+    </footer>
+</body>
+</html>
