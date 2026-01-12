@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadarX Partner | Dürüst Satıcı Paneli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(34, 211, 238, 0.2); }
+        .gradient-text { background: linear-gradient(to right, #22d3ee, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-sans min-h-screen">
+    <nav class="p-6 border-b border-slate-800 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-handshake text-slate-900 text-sm"></i>
+            </div>
+            <h1 class="text-xl font-bold tracking-wider text-cyan-400">RadarX <span class="text-white">Partner</span></h1>
+        </div>
+        <a href="index.html" class="text-xs text-slate-400 hover:text-white transition-all underline">Ana Sayfaya Dön</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black mb-4 gradient-text text-uppercase">Dürüst Ticaretin Merkezi</h2>
+            <p class="text-slate-400 italic text-sm">"Sektör fark etmeksizin, en dürüst fiyatı sunan tüm işletmelere kapımız açık."</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-panel p-8 rounded-3xl">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-pen-to-square text-cyan-400"></i> İşletme Başvurusu
+                </h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-slate-500">İşletme Adı</label>
+                        <input type="text" class="w-full bg-slate-800/50 border border-slate-700 p-3 rounded-xl outline-none focus:border-cyan-500 transition-all text-sm" placeholder="Örn: Uybat Market">
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-slate-500">Faaliyet Sektörü</label>
+                        <select class="w-full bg-slate-800/50 border border-slate-700 p-3 rounded-xl outline-none focus:border-cyan-500 transition-all text-sm appearance-none">
+                            <option>Gıda / Market</option>
+                            <option>Kozmetik / Bakım</option>
+                            <option>Tekstil / Giyim</option>
+                            <option>Elektronik / Beyaz Eşya</option>
+                            <option>İnşaat / Ambalaj</option>
+                            <option>Diğer</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-slate-500">Dürüstlük Taahhüdü</label>
+                        <div class="flex items-center gap-2 mt-1">
+                            <input type="checkbox" id="check" class="w-4 h-4 accent-cyan-500">
+                            <label for="check" class="text-[10px] text-slate-400 italic">En dürüst fiyatı sunacağımı kabul ediyorum.</label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="alert('Başvurunuz dürüstçe incelenmek üzere sıraya alındı!')" class="w-full bg-cyan-500 text-slate-900 py-3 rounded-xl font-bold hover:bg-cyan-400 transition-all shadow-lg mt-4">BAŞVURUYU GÖNDER</button>
+                </form>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-800">
+                    <i class="fas fa-percent text-cyan-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold mb-2">Düşük Komisyon</h4>
+                    <p class="text-xs text-slate-500">Siz fiyatı düşürün, biz komisyonu dürüstçe minimumda tutalım.</p>
+                </div>
+                <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-800">
+                    <i class="fas fa-bullhorn text-orange-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold mb-2">Hedefli Reklam</h4>
+                    <p class="text-xs text-slate-500">Ürününüz bölgenizdeki binlerce dürüst alıcıya anında ulaşsın.</p>
+                </div>
+                <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-800">
+                    <i class="fas fa-chart-line text-green-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold mb-2">Sınırsız Kapsam</h4>
+                    <p class="text-xs text-slate-500">Gıdadan inşaata, her sektörde RadarX güvencesiyle satış yapın.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-slate-800 text-center">
+            <h4 class="text-[10px] text-slate-500 uppercase tracking-[0.3em] mb-8">Yakında Tüm Sektörlerdeyiz</h4>
+            <div class="flex flex-wrap justify-center gap-8 opacity-30 text-2xl grayscale">
+                <i class="fas fa-shirt" title="Tekstil"></i>
+                <i class="fas fa-laptop" title="Elektronik"></i>
+                <i class="fas fa-plug-circle-bolt" title="Beyaz Eşya"></i>
+                <i class="fas fa-trowel-bricks" title="İnşaat"></i>
+                <i class="fas fa-flask" title="Kozmetik"></i>
+                <i class="fas fa-stethoscope" title="Medikal"></i>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center p-10 text-slate-600 text-[10px] uppercase tracking-widest">
+        Uybat Tech | RadarX Partner Network © 2026
+    </footer>
+</body>
+</html>
