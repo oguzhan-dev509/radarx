@@ -1,0 +1,103 @@
+firsat_merkezi.html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadarX - Fırsat Merkezi</title>
+    <style>
+        body { background-color: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; text-align: center; padding-bottom: 120px; }
+        .header { margin-bottom: 40px; }
+        .header h1 { color: #f8fafc; font-size: 2.8rem; text-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+        .main-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .market-section { flex: 1; min-width: 300px; max-width: 400px; }
+        .market-title { font-size: 1.4rem; padding-bottom: 12px; margin-bottom: 25px; border-bottom: 3px solid; }
+        .a101-title { color: #22d3ee; border-color: #22d3ee; }
+        .bim-title { color: #ef4444; border-color: #ef4444; }
+        .sok-title { color: #facc15; border-color: #facc15; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 18px; padding: 20px; margin-bottom: 20px; text-align: left; position: relative; }
+        .badge { position: absolute; top: 15px; right: 15px; padding: 4px 10px; border-radius: 8px; font-size: 0.7rem; font-weight: bold; color: #000; }
+        .price { font-size: 1.8rem; color: #ffffff; font-weight: bold; margin: 10px 0; }
+        .old-price { color: #64748b; text-decoration: line-through; font-size: 0.9rem; }
+        .btn-ekle { width: 100%; padding: 12px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>RadarX <span style="color: #22d3ee;">Fırsat</span> Merkezi</h1>
+        <p style="color: #94a3b8;">📅 11 - 17 OCAK HAFTALIK BÜLTENİ</p>
+    </div>
+
+    <div style="background: linear-gradient(90deg, #1e293b, #334155); border: 2px solid #facc15; border-radius: 25px; padding: 30px; max-width: 900px; margin: 0 auto 50px auto; position: relative;">
+        <div style="position: absolute; top: -10px; left: -10px; background: #facc15; color: #000; padding: 5px 20px; font-weight: bold;">🚀 GÜNÜN KAHRAMANI</div>
+        <h2 style="margin: 0;">Biryağ Ayçiçek Yağı 5 L</h2>
+        <div style="font-size: 2.5rem; color: #facc15; font-weight: 900; margin: 10px 0;">799,00 TL</div>
+        <button onclick="sepeteEkle('Biryağ 5L', 799.0, 925.0)" style="background:#facc15; border:none; padding:10px 30px; border-radius:10px; font-weight:bold; cursor:pointer;">Sepete Ekle</button>
+    </div>
+
+    <div class="main-container">
+        <div class="market-section">
+            <h2 class="market-title a101-title">🔵 A101 Yıldızları</h2>
+            <div class="card">
+                <span class="badge" style="background:#22d3ee;">KRİTİK</span>
+                <h3>Biryağ Ayçiçek Yağı 5 L</h3>
+                <div class="old-price">925,00 TL</div>
+                <div class="price">799,00 TL</div>
+                <button onclick="sepeteEkle('Biryağ 5L', 799.0, 925.0)" class="btn-ekle" style="background:#22d3ee;">Sepete Ekle</button>
+            </div>
+        </div>
+
+        <div class="market-section">
+            <h2 class="market-title bim-title">🔴 BİM Aktüel</h2>
+            <div class="card">
+                <span class="badge" style="background:#ef4444; color:white;">SÜPER</span>
+                <h3>Dost Tam Yağlı Süt 1 L</h3>
+                <div class="old-price">39,50 TL</div>
+                <div class="price">29,90 TL</div>
+                <button onclick="sepeteEkle('Dost Süt', 29.9, 39.5)" class="btn-ekle" style="background:#ef4444; color:white;">Sepete Ekle</button>
+            </div>
+        </div>
+
+        <div class="market-section">
+            <h2 class="market-title sok-title">🟡 ŞOK Fırsatları</h2>
+            <div class="card">
+                <span class="badge" style="background:#facc15;">YENİ</span>
+                <h3>Lio Salamura Siyah Zeytin 1 Kg</h3>
+                <div class="old-price">145,00 TL</div>
+                <div class="price">119,00 TL</div>
+                <button onclick="sepeteEkle('Lio Zeytin', 119.0, 145.0)" class="btn-ekle" style="background:#facc15;">Sepete Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sepet-paneli" style="display:none; position: fixed; bottom: 0; left: 0; right: 0; background: #22d3ee; color: #0f172a; padding: 20px; font-weight: bold; z-index: 1000;">
+        🛒 SEPET: <span id="toplam-tutar">0.00 TL</span> | 📉 TASARRUF: <span id="tasarruf-miktari">0.00 TL</span>
+        <button onclick="fisiGoster()" style="margin-left:20px; padding:5px 15px; cursor:pointer;">Fiş Detayı</button>
+    </div>
+
+    <div id="fis-penceresi" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; color: #333; padding: 25px; border-radius: 15px; z-index: 2000; width: 300px; font-family: courier;">
+        <h3 style="text-align:center; border-bottom:1px solid #333;">RADARX FİŞİ</h3>
+        <div id="fis-icerik"></div>
+        <div id="fis-toplam" style="text-align:right; font-weight:bold; margin-top:10px;"></div>
+        <button onclick="document.getElementById('fis-penceresi').style.display='none'" style="width:100%; margin-top:10px;">Kapat</button>
+    </div>
+
+    <script>
+        let toplamTasarruf = 0; let toplamSepet = 0; let sepetListesi = [];
+        function sepeteEkle(ad, fiyat, eskiFiyat) {
+            toplamSepet += fiyat; toplamTasarruf += (eskiFiyat - fiyat);
+            sepetListesi.push({ad, fiyat});
+            document.getElementById('sepet-paneli').style.display = 'block';
+            document.getElementById('toplam-tutar').innerText = toplamSepet.toFixed(2) + " TL";
+            document.getElementById('tasarruf-miktari').innerText = toplamTasarruf.toFixed(2) + " TL";
+        }
+        function fisiGoster() {
+            let html = ""; sepetListesi.forEach(u => html += `<div>${u.ad}: ${u.fiyat.toFixed(2)} TL</div>`);
+            document.getElementById('fis-icerik').innerHTML = html;
+            document.getElementById('fis-toplam').innerText = "TOPLAM: " + toplamSepet.toFixed(2) + " TL";
+            document.getElementById('fis-penceresi').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

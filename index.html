@@ -3,88 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RadarX | Uybat Tech Dürüst İndirim Radarı</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>RadarX - Fırsat Karargahı</title>
     <style>
-        .radar-pulse {
-            box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
-        }
+        body { background-color: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; text-align: center; padding-bottom: 100px; }
+        .header { margin-bottom: 40px; }
+        .header h1 { color: #f8fafc; font-size: 2.8rem; text-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+        .main-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .market-section { flex: 1; min-width: 300px; max-width: 400px; }
+        .market-title { font-size: 1.4rem; padding-bottom: 12px; margin-bottom: 25px; border-bottom: 3px solid; border-radius: 2px; }
+        .a101-title { color: #22d3ee; border-color: #22d3ee; }
+        .sok-title { color: #facc15; border-color: #facc15; }
+        .bim-title { color: #ef4444; border-color: #ef4444; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 18px; padding: 20px; margin-bottom: 20px; transition: all 0.3s ease; position: relative; text-align: left; }
+        .card:hover { transform: translateY(-5px); border-color: #f8fafc; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .badge { position: absolute; top: 15px; right: 15px; padding: 4px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+        .a101-badge { background: #22d3ee; color: #000; }
+        .sok-badge { background: #facc15; color: #000; }
+        .bim-badge { background: #ef4444; color: #fff; }
+        .card h3 { font-size: 1rem; margin: 10px 0; color: #f1f5f9; min-height: 48px; }
+        .old-price { color: #64748b; text-decoration: line-through; font-size: 0.9rem; }
+        .price { font-size: 1.9rem; color: #ffffff; font-weight: 800; margin: 5px 0; }
+        .source { color: #94a3b8; font-size: 0.75rem; margin-top: 12px; display: block; border-top: 1px solid #334155; padding-top: 10px; }
+        .btn-ekle { margin-top:10px; width:100%; padding:12px; border:none; border-radius:10px; font-weight:bold; cursor:pointer; transition: 0.2s; }
+        .btn-ekle:active { transform: scale(0.95); }
     </style>
 </head>
-<body class="bg-slate-900 text-white font-sans">
+<body>
 
-    <nav class="p-6 flex justify-between items-center border-b border-slate-800">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center radar-pulse">
-                <i class="fas fa-crosshairs text-slate-900 text-xl"></i>
+    <div class="header">
+        <h1>RadarX <span style="color: #22d3ee;">Fırsat</span> Merkezi</h1>
+        <p style="color: #94a3b8; font-weight: 500;">📅 11 - 17 OCAK BÜYÜK KARŞILAŞTIRMA</p>
+    </div>
+
+    <div id="gunun-kahramani-alani" style="margin-bottom: 50px;">
+        <div style="background: linear-gradient(90deg, #1e293b, #334155); border: 2px solid #facc15; border-radius: 25px; padding: 30px; max-width: 900px; margin: 0 auto; box-shadow: 0 0 30px rgba(250, 204, 21, 0.2); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -10px; left: -10px; background: #facc15; color: #000; padding: 10px 30px; font-weight: bold; transform: rotate(-5deg); font-size: 1.2rem; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">🚀 GÜNÜN KAHRAMANI</div>
+            <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
+                <div style="text-align: left;">
+                    <h2 style="font-size: 1.8rem; margin: 0; color: #f8fafc;">Biryağ Ayçiçek Yağı 5 L</h2>
+                    <p style="color: #94a3b8; margin: 5px 0;">Bu haftanın en dürüst indirimi yakalandı!</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="color: #64748b; text-decoration: line-through; font-size: 1.2rem;">925,00 TL</div>
+                    <div style="color: #facc15; font-size: 3rem; font-weight: 900;">799,00 TL</div>
+                </div>
+                <div style="background: rgba(34, 211, 238, 0.1); border: 1px solid #22d3ee; padding: 15px 25px; border-radius: 15px; text-align: center;">
+                    <span style="display: block; color: #22d3ee; font-size: 0.8rem; font-weight: bold;">İNDİRİM ORANI</span>
+                    <span style="font-size: 2rem; color: #fff; font-weight: bold;">%14</span>
+                </div>
             </div>
-            <h1 class="text-2xl font-bold tracking-wider text-cyan-400">RadarX</h1>
+            <button onclick="sepeteEkle('Biryağ 5L', 799.00, 925.00)" class="btn-ekle" style="background:#facc15; color:#000; max-width: 200px; margin-top:20px;">Kahramanı Sepete Ekle</button>
         </div>
-        <div class="text-sm font-medium text-slate-400">
-            <span class="text-cyan-400">TR</span> | EN
-        </div>
-    </nav>
+    </div>
 
-    <main class="max-w-4xl mx-auto mt-20 px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Gerçek İndirimi Yakala.</h2>
-        <p class="text-slate-400 mb-8 text-lg">Hangi ürünü, en dürüst fiyata arıyorsun?</p>
-        
-        <div class="relative max-w-2xl mx-auto group">
-            <input type="text" placeholder="Ürün, marka veya market ara..." 
-                class="w-full p-5 pl-12 rounded-2xl bg-slate-800 border-2 border-slate-700 focus:border-cyan-500 outline-none transition-all text-lg shadow-2xl">
-            <i class="fas fa-search absolute left-5 top-6 text-slate-500 group-focus-within:text-cyan-500"></i>
-            <button class="absolute right-3 top-3 bg-cyan-500 text-slate-900 px-6 py-2.5 rounded-xl font-bold hover:bg-cyan-400 transition-colors">
-                TARA
-            </button>
+    <div class="main-container">
+        <div class="market-section">
+            <h2 class="market-title a101-title">🔵 A101 Yıldızları</h2>
+            <div class="card">
+                <span class="badge a101-badge">KRİTİK</span>
+                <h3>Biryağ Ayçiçek Yağı 5 L</h3>
+                <div class="old-price">925,00 TL</div>
+                <div class="price">799,00 TL</div>
+                <button onclick="sepeteEkle('Biryağ 5L', 799.00, 925.00)" class="btn-ekle" style="background:#22d3ee; color:#000;">Sepete Ekle</button>
+                <span class="source">📍 A101 Market</span>
+            </div>
         </div>
 
-        <div class="mt-8 inline-flex items-center gap-3 bg-slate-800/50 px-4 py-2 rounded-full border border-slate-700 text-sm">
-            <span class="flex h-2 w-2 rounded-full bg-green-500"></span>
-            <span class="text-slate-300">Şu an 12 markette 1.450 fiyat güncellendi.</span>
+        <div class="market-section">
+            <h2 class="market-title bim-title">🔴 BİM Aktüel</h2>
+            <div class="card">
+                <span class="badge bim-badge">SÜPER</span>
+                <h3>Dost Tam Yağlı Süt 1 L</h3>
+                <div class="old-price">39,50 TL</div>
+                <div class="price">29,90 TL</div>
+                <button onclick="sepeteEkle('Dost Süt', 29.90, 39.50)" class="btn-ekle" style="background:#ef4444; color:#fff;">Sepete Ekle</button>
+                <span class="source">📍 BİM Market</span>
+            </div>
+            <div class="card">
+                <span class="badge bim-badge">İNDİRİM</span>
+                <h3>Efsane Ekonomik Pirinç 5 Kg</h3>
+                <div class="old-price">185,00 TL</div>
+                <div class="price">162,50 TL</div>
+                <button onclick="sepeteEkle('Efsane Pirinç', 162.50, 185.00)" class="btn-ekle" style="background:#ef4444; color:#fff;">Sepete Ekle</button>
+                <span class="source">📍 BİM Market</span>
+            </div>
         </div>
-    </main>
 
-    <section class="max-w-6xl mx-auto mt-24 px-6 pb-20">
-        <div class="flex justify-between items-end mb-8">
+        <div class="market-section">
+            <h2 class="market-title sok-title">🟡 ŞOK Fırsatları</h2>
+            <div class="card">
+                <span class="badge sok-badge">YENİ</span>
+                <h3>Lio Salamura Siyah Zeytin 1 Kg</h3>
+                <div class="old-price">145,00 TL</div>
+                <div class="price">119,00 TL</div>
+                <button onclick="sepeteEkle('Lio Zeytin', 119.00, 145.00)" class="btn-ekle" style="background:#facc15; color:#000;">Sepete Ekle</button>
+                <span class="source">📍 ŞOK Market</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="sepet-paneli" style="display:none; position: fixed; bottom: 0; left: 0; right: 0; background: #22d3ee; color: #0f172a; padding: 15px; box-shadow: 0 -10px 30px rgba(0,0,0,0.5); z-index: 1000; font-weight: bold;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <span>🛒 TOPLAM: <span id="toplam-tutar">0.00 TL</span></span>
+            <span style="background: #0f172a; color: #facc15; padding: 8px 15px; border-radius: 50px; border: 1px solid #fff;">
+                📉 TASARRUF: <span id="tasarruf-miktari">0.00 TL</span>
+            </span>
             <div>
-                <h3 class="text-2xl font-bold">Günün Dürüst 5'lisi</h3>
-                <p class="text-slate-500 text-sm">RadarX Botları tarafından onaylanmış gerçek fırsatlar.</p>
+                <button onclick="fisiGoster()" style="background: #0f172a; color: #fff; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-right: 5px;">🧾 Fiş Detayı</button>
+                <button onclick="location.reload()" style="background: #ef4444; color: #fff; border: none; padding: 8px 15px; border-radius: 8px; cursor: pointer;">Sıfırla</button>
+                <button onclick="window.location.href='firsat_merkezi.html'" class="btn-tara">TARA</button>
             </div>
-            <a href="#" class="text-cyan-400 text-sm font-bold hover:underline">Tümünü Gör <i class="fas fa-arrow-right ml-1"></i></a>
         </div>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-all cursor-pointer group">
-                <div class="aspect-square bg-slate-700 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
-                    <i class="fas fa-cheese text-4xl text-slate-500 group-hover:scale-110 transition-transform"></i>
-                    <span class="absolute top-2 left-2 bg-red-500 text-[10px] font-bold px-2 py-1 rounded">-%22</span>
-                </div>
-                <h4 class="font-bold text-sm truncate">X Marka Süzme Peynir</h4>
-                <p class="text-[10px] text-slate-500 mb-2">BİM - 500g</p>
-                <div class="flex justify-between items-center">
-                    <div>
-                        <span class="text-cyan-400 font-bold">75,50 TL</span>
-                        <span class="block text-[10px] text-slate-500 line-through">92,00 TL</span>
-                    </div>
-                    <div class="bg-cyan-500/10 p-2 rounded-lg text-cyan-400 border border-cyan-500/20">
-                        <i class="fas fa-shield-halved text-xs"></i>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </section>
+    <div id="fis-penceresi" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; color: #333; padding: 25px; border-radius: 15px; box-shadow: 0 0 50px rgba(0,0,0,0.8); z-index: 2000; width: 320px; font-family: 'Courier New', monospace;">
+        <h3 style="text-align: center; border-bottom: 2px dashed #333; padding-bottom: 10px; margin-top: 0;">RADARX FİŞİ</h3>
+        <div id="fis-icerik" style="margin: 15px 0;"></div>
+        <div id="fis-toplam" style="border-top: 2px dashed #333; padding-top: 10px; font-weight: bold; text-align: right; font-size: 1.2rem;"></div>
+        <button onclick="document.getElementById('fis-penceresi').style.display='none'" style="width: 100%; margin-top: 15px; padding: 10px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Kapat</button>
+    </div>
 
-    <footer class="mt-auto border-t border-slate-800 p-10 text-center">
-        <p class="text-slate-500 text-xs mb-2">Uybat Teknoloji Yazılım ve Tic. Ltd. Şti.</p>
-        <p class="text-slate-600 text-[10px]">info@uybat.com | RadarX © 2026</p>
-    </footer>
+    <script>
+        let toplamTasarruf = 0;
+        let toplamSepet = 0;
+        let sepetListesi = [];
 
+        function sepeteEkle(ad, fiyat, eskiFiyat) {
+            toplamSepet += fiyat;
+            toplamTasarruf += (eskiFiyat - fiyat);
+            sepetListesi.push({ad: ad, fiyat: fiyat});
+
+            document.getElementById('sepet-paneli').style.display = 'block';
+            document.getElementById('toplam-tutar').innerText = toplamSepet.toFixed(2) + " TL";
+            document.getElementById('tasarruf-miktari').innerText = toplamTasarruf.toFixed(2) + " TL";
+        }
+
+        function fisiGoster() {
+            let html = "";
+            sepetListesi.forEach(urun => {
+                html += `<div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>${urun.ad}</span> <span>${urun.fiyat.toFixed(2)} TL</span></div>`;
+            });
+            document.getElementById('fis-icerik').innerHTML = html;
+            document.getElementById('fis-toplam').innerText = "TOPLAM: " + toplamSepet.toFixed(2) + " TL";
+            document.getElementById('fis-penceresi').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
