@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadarX | Arama Sonuçları</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .result-card { transition: all 0.3s ease; border: 1px solid #334155; }
+        .result-card:hover { border-color: #22d3ee; transform: scale(1.02); }
+        .price-badge { background: linear-gradient(90deg, #06b6d4, #3b82f6); }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-sans min-h-screen">
+    <nav class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-search text-slate-900 text-sm"></i>
+            </div>
+            <h1 class="text-xl font-bold text-cyan-400 uppercase tracking-tighter">RadarX <span class="text-white">Sonuçlar</span></h1>
+        </div>
+        <a href="index.html" class="text-xs text-slate-500 hover:text-white transition-all"><i class="fas fa-arrow-left"></i> Geri</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-8">
+        <div class="mb-8">
+            <p class="text-slate-500 text-xs uppercase tracking-widest font-bold">Aranan Kelime:</p>
+            <h2 class="text-2xl font-black">"Süzme Peynir"</h2>
+            <p class="text-cyan-500 text-[10px] mt-1 italic">Dürüstçe taranan 14 farklı satıcıda 3 sonuç bulundu.</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="result-card bg-cyan-500/5 rounded-3xl p-6 border-2 border-cyan-500/30 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-cyan-500 text-slate-900 text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-tighter">En Dürüst Fiyat</div>
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700">
+                            <i class="fas fa-cheese text-2xl text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Süzme Peynir 500g</h3>
+                            <p class="text-xs text-slate-400"><i class="fas fa-store text-cyan-400 mr-1"></i> A101 Market</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-2xl font-black text-white">₺85,00</p>
+                        <button class="bg-cyan-500 text-slate-900 text-[10px] font-black px-4 py-2 rounded-lg mt-2 uppercase">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card bg-slate-800/40 rounded-3xl p-6 border border-slate-700">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-cheese text-2xl text-slate-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Süzme Peynir 500g</h3>
+                            <p class="text-xs text-slate-500"><i class="fas fa-store text-orange-400 mr-1"></i> Migros</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xl font-bold text-slate-400">₺94,90</p>
+                        <button class="border border-slate-700 text-slate-500 text-[10px] font-bold px-4 py-2 rounded-lg mt-2 uppercase">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card bg-slate-800/40 rounded-3xl p-6 border border-slate-700">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-cheese text-2xl text-slate-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Süzme Peynir 500g</h3>
+                            <p class="text-xs text-slate-500"><i class="fas fa-store text-red-500 mr-1"></i> BİM</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xl font-bold text-slate-400">₺96,00</p>
+                        <button class="border border-slate-700 text-slate-500 text-[10px] font-bold px-4 py-2 rounded-lg mt-2 uppercase">İncele</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-slate-800/20 border border-dashed border-slate-700 p-6 rounded-3xl text-center">
+            <i class="fas fa-lightbulb text-yellow-500 mb-2"></i>
+            <p class="text-xs text-slate-400 italic">"Görünen o ki, bu üründe en dürüst seçim **A101**. Toplamda ₺11,00 tasarruf edebilirsin!"</p>
+        </div>
+    </main>
+
+    <footer class="text-center p-10 text-slate-600 text-[10px] uppercase tracking-widest bg-slate-900 border-t border-slate-800">
+        Uybat Tech | RadarX Search Engine © 2026
+    </footer>
+</body>
+</html>
