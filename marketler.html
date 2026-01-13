@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadarX | Market Katalogları</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .market-header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 2px solid #22d3ee33; }
+        .promo-card { transition: 0.3s; border: 1px solid #334155; }
+        .promo-card:hover { border-color: #22d3ee; transform: scale(1.02); }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <nav class="p-6 border-b border-slate-800 flex justify-between items-center sticky top-0 bg-slate-900/90 backdrop-blur-md z-50">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-store text-cyan-400"></i>
+            <h1 class="text-xl font-black uppercase tracking-tighter">Market <span class="text-cyan-400">Radarı</span></h1>
+        </div>
+        <a href="index.html" class="text-xs text-slate-500 font-bold"><i class="fas fa-arrow-left mr-1"></i> GERİ</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-6 pb-24">
+        <div class="market-header p-8 rounded-3xl mb-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-6">
+                <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center p-2 shadow-2xl">
+                    <img src="https://upload.wikimedia.org/wikipedia/tr/1/1b/A101_logo.png" alt="A101" class="max-w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-black">A101 Market</h2>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-3 py-1 rounded-full font-black uppercase">En Dürüst Market 🏆</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center md:text-right border-t md:border-t-0 md:border-l border-slate-700 pt-6 md:pt-0 md:pl-8">
+                <p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Dürüstlük Skoru</p>
+                <h3 class="text-4xl font-black text-emerald-500">96<span class="text-sm text-slate-600">/100</span></h3>
+            </div>
+        </div>
+
+        <h3 class="text-lg font-bold mb-6 flex items-center gap-3"><i class="fas fa-tag text-cyan-400"></i> Dürüst Fırsatlar</h3>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="promo-card bg-slate-800/40 p-4 rounded-3xl">
+                <div class="w-full h-32 bg-slate-800 rounded-2xl mb-4 flex items-center justify-center border border-dashed border-slate-700">
+                    <i class="fas fa-box-open text-slate-700 text-3xl"></i>
+                </div>
+                <h4 class="text-xs font-bold truncate">Dana Kıyma 400g</h4>
+                <div class="flex justify-between items-end mt-2">
+                    <p class="text-cyan-400 font-black">₺149,00</p>
+                    <span class="text-[8px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">98 Puan</span>
+                </div>
+            </div>
+            <div class="promo-card bg-slate-800/40 p-4 rounded-3xl">
+                <div class="w-full h-32 bg-slate-800 rounded-2xl mb-4 flex items-center justify-center border border-dashed border-slate-700">
+                    <i class="fas fa-box-open text-slate-700 text-3xl"></i>
+                </div>
+                <h4 class="text-xs font-bold truncate">Klasik Beyaz Peynir</h4>
+                <div class="flex justify-between items-end mt-2">
+                    <p class="text-cyan-400 font-black">₺115,00</p>
+                    <span class="text-[8px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">94 Puan</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-slate-800/20 p-8 rounded-3xl border-2 border-dashed border-slate-700 text-center">
+            <i class="fas fa-file-pdf text-4xl text-red-500/40 mb-4"></i>
+            <h4 class="font-bold text-sm mb-2 uppercase">A101 16-23 Ocak Aktüel</h4>
+            <button class="bg-red-500 text-white px-8 py-3 rounded-xl font-bold text-xs hover:bg-red-600 transition-all uppercase">KATALOĞU TARA</button>
+        </div>
+    </main>
+
+    <footer class="p-10 text-center text-slate-600 text-[9px] uppercase border-t border-slate-800">
+        RadarX Market Ağı | Dürüstlüğün Doğrulandığı Yer
+    </footer>
+</body>
+</html>
