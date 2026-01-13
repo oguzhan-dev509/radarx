@@ -23,17 +23,23 @@
             </div>
             <h1 class="text-2xl font-bold tracking-wider text-cyan-400">RadarX</h1>
         </div>
-        <a href="satici_paneli.html" class="text-[10px] font-bold text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg uppercase">Satış Yap</a>
+        <div class="flex items-center gap-4">
+            <button onclick="window.location.href='profilim.html'" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-400 transition-all shadow-lg">
+                <i class="fas fa-user text-cyan-400 text-sm"></i>
+            </button>
+            <a href="satici_paneli.html" class="text-[10px] font-bold text-cyan-400 border border-cyan-400/30 px-4 py-2 rounded-lg uppercase">Satış Yap</a>
+        </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-4 pt-8 pb-32">
         <div class="max-w-3xl mx-auto mb-16">
-            <div class="relative mb-8">
-                <input type="text" placeholder="Ürün, marka veya sektör ara..." class="w-full p-5 pl-14 rounded-2xl bg-slate-800 border-2 border-slate-700 focus:border-cyan-500 outline-none text-lg">
-                <i class="fas fa-search absolute left-6 top-6 text-slate-500"></i>
-               <button onclick="window.location.href='profilim.html'" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-400 transition-all">
-    <i class="fas fa-user text-slate-400 text-sm"></i>
-</button>
+            <div class="relative mb-8 flex items-center gap-3">
+                <div class="relative flex-grow">
+                    <input type="text" placeholder="Ürün, marka veya sektör ara..." class="w-full p-5 pl-14 rounded-2xl bg-slate-800 border-2 border-slate-700 focus:border-cyan-500 outline-none text-lg">
+                    <i class="fas fa-search absolute left-6 top-6 text-slate-500"></i>
+                    <button onclick="window.location.href='arama_sonuclari.html'" class="absolute right-3 top-3 bg-cyan-500 text-slate-900 px-6 py-2.5 rounded-xl font-bold uppercase text-xs">TARA</button>
+                </div>
+            </div>
 
             <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
                 <div class="flex-shrink-0 w-20 text-center"><div class="w-14 h-14 mx-auto bg-cyan-500/20 border-2 border-cyan-400 rounded-xl flex items-center justify-center text-cyan-400"><i class="fas fa-utensils"></i></div><span class="text-[9px] font-bold mt-2 block uppercase text-cyan-400">Gıda</span></div>
@@ -41,6 +47,14 @@
                 <div class="flex-shrink-0 w-20 text-center"><div class="w-14 h-14 mx-auto bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center text-slate-500"><i class="fas fa-shirt"></i></div><span class="text-[9px] font-bold mt-2 block uppercase text-slate-500">Tekstil</span></div>
                 <div class="flex-shrink-0 w-20 text-center"><div class="w-14 h-14 mx-auto bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center text-slate-500"><i class="fas fa-trowel-bricks"></i></div><span class="text-[9px] font-bold mt-2 block uppercase text-slate-500">İnşaat</span></div>
             </div>
+        </div>
+
+        <div class="mb-16 p-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] border border-slate-700 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fas fa-shield-halved text-6xl"></i></div>
+            <h2 class="text-xl font-black text-cyan-400 uppercase tracking-[0.3em] mb-4">RadarX Manifestosu</h2>
+            <p class="text-slate-400 text-xs leading-relaxed max-w-xl mx-auto italic">
+                "Biz sadece fiyatları taramıyoruz; dürüstlüğü arıyoruz. Sahte indirimlerin, bindirimlerin ve haksız kazancın karşısında, halkın radarı olarak buradayız."
+            </p>
         </div>
 
         <section class="mb-16">
@@ -120,4 +134,3 @@
     </footer>
 </body>
 </html>
-
