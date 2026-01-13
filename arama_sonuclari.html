@@ -119,5 +119,27 @@
     <footer class="text-center p-10 text-slate-600 text-[10px] uppercase tracking-widest border-t border-slate-800">
         RadarX Dürüstlük Algoritması v1.0 | Uybat Tech 2026
     </footer>
+    <script>
+    // Dürüstlük Puanlarını Rastgele Test Etme Fonksiyonu
+    function testDurustluk() {
+        const scores = document.querySelectorAll('.absolute.text-xs.font-black');
+        scores.forEach(score => {
+            const randomScore = Math.floor(Math.random() * 100); // 0-100 arası puan üret
+            score.innerText = randomScore;
+            
+            // Çemberi puana göre dürüstçe ayarla (150 birim üzerinden)
+            const circle = score.previousElementSibling.lastElementChild;
+            const offset = 150 - (randomScore * 1.5);
+            circle.style.strokeDashoffset = offset;
+
+            // Renkleri puana göre dürüstçe değiştir
+            if(randomScore > 80) circle.style.stroke = "#10b981"; // Yeşil
+            else if(randomScore > 50) circle.style.stroke = "#f59e0b"; // Sarı
+            else circle.style.stroke = "#ef4444"; // Kırmızı
+        });
+    }
+    // Sayfa açıldığında testi çalıştır
+    window.onload = testDurustluk;
+</script>
 </body>
 </html>
